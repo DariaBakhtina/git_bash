@@ -1,0 +1,61 @@
+Задача 2
+
+Зайти в домашнюю директорию через терминал.
+cd ~/OneDrive/Документы
+
+Создать папку test 3
+mkdir test3
+
+Добавить в папку test 3 три файла 4, 5 и 6, в каждом из которых должно быть по 4 строки row1, row2, row3, row4
+cd test3
+touch file4.txt file5.txt file6.txt
+echo row1 > file4.txt
+echo row2 >> file4.txt
+echo row3 >> file4.txt
+echo row4 >> file4.txt
+cat file4.txt > file5.txt
+cat file4.txt > file6.txt
+
+Найдите строку row2 в файле 5
+grep "row2" file5.txt
+
+Найдите строку row в папке test3
+grep "row" ~/OneDrive/Документы/test3/*.txt
+
+Посчитайте, сколько строк с содержимым row в файле 6
+grep "row" -c file6.txt
+
+Найдите файл 5 внутри папки test3
+find -name "file5.txt"
+
+Используя команду find, удалите файл 5
+find -name "file5.txt" -delete
+
+Используя команду echo, добавьте слово test в файл 4
+echo test >> file4.txt
+
+Замените слово test в файле 4 на fail
+nano file4.txt
+(далее заменяем строку test на fail, сохраняем на ctrl+s и выходим ctrl+x)
+
+Добавьте в файл 4 слово test так, чтобы сохранилось содержимое
+echo test >> file4.txt
+
+Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе
+ps aux
+
+Убейте процесс в консоли
+kill 7132
+
+Узнайте доступность ресурса artsiomrusau.com, используя ping
+ping artsiomrusau.com
+
+Отправьте 5 пакетов на сайт artsiomrusau.com
+ping -c 5 artsiomrusau.com
+
+Используя GET и команду curl, получите информацию о зарегистрированных питомцах с любым статусом на https://petstore.swagger.io/
+curl https://petstore.swagger.io/v2/pet/findByStatus?status=sold
+
+Используя POST и команду curl, создайте нового пользователя на https://petstore.swagger.io/
+curl -X POST https://petstore.swagger.io/v2/pet --data "id = 1122" --data "name = massa" --data "status = sold"
+
